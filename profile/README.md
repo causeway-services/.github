@@ -19,6 +19,14 @@ services, and each step has its own organization:
 | [Causeway Services](https://github.com/causeway-services) | Public services: gives people usable free-software rights and practical ways to learn, operate, challenge, contribute and benefit. | Apache-2.0 |
 | [561 Group](https://github.com/561-group) | The union of the four organizations below, operated by Morgan Sennhauser. | 561 Group Repository License 1.0 (all rights reserved) |
 
+## Use and support existing public services
+
+**Need a useful result?** [Contact the 561 Group's existing service intake](https://561.group/contact/) with your concrete outcome, desired timeline and indicative budget. Causeway can evaluate an authorized, bounded engagement in technical education, agent operations, publications or other existing public services. An initial inquiry and indicative price do not require a formal proof that customers already exist; the proper service office confirms the scope, actual legal seller, delivery capacity and terms *before* accepting an order. No inquiry constitutes an accepted purchase.
+
+**Prefer to fund ongoing work?** [Sustain 561 Group research and technical infrastructure for $10 USD/month](https://buy.stripe.com/28E28s1b4gJcb2Y3Io5EY02). This is the existing live recurring Stripe link, not a Causeway checkout or a new product. The legal merchant is identified at checkout. Support renews monthly until canceled, grants no goods, special access or editorial influence, and is not a charitable tax-deductible donation. [Billing/cancellation help](https://561.group/contact/).
+
+**Looking for already authored assets?** Browse the original [Causeway Shop](https://shop.561.group/) and [Market](https://market.561.group/) surfaces for available descriptions; product listings and payment readiness are separately qualified by their own sellers. This profile makes no claim that a particular checkout, API or publication is currently running.
+
 - **Licensing.** A repository's own LICENSE file governs it. Indigenous cultural material is never put under an open
   license; see [Governance and Indigenous data](https://github.com/causeway-services/.github/blob/main/GOVERNANCE.md).
 - **Security.** Report vulnerabilities privately from a repository's **Security** tab (**Report a vulnerability**).
