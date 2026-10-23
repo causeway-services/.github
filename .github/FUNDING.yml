@@ -1,0 +1,5 @@
+# Canonical GitHub organization-default funding configuration.
+# Voluntary appreciation for public open work; emsenn is the legal Stripe merchant.
+# No product, future work, access, equity, editorial influence or tax deduction.
+# Fixed campaign checkout has independently observed Stripe source attribution.
+custom: ["https://buy.stripe.com/9B68wQ9HA50ub2Yen25EY04", "https://buy.stripe.com/28E28s1b4gJcb2Y3Io5EY02", "https://github.com/561-group/.github/blob/main/TIPS.md"]
