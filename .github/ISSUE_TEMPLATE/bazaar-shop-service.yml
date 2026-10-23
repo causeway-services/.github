@@ -1,0 +1,83 @@
+name: "Buy Shop services: POD fulfillment or contextual advertising"
+description: "Ask for a real supplier/placement quote. This public inquiry does not authorize orders, charges, advertising, or listing."
+title: "[Shop services inquiry] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For independently controlled shops that want **optional** merchandise/fulfillment or contextual advertising through Bazaar. [What we can and cannot offer today](https://github.com/causeway-services/.github/blob/main/SHOP-SERVICES.md). These are separate services; you choose what to evaluate.
+
+        This is a **public GitHub issue**. Do not include payment or bank data, customer addresses, account secrets, private artwork, client data, undisclosed supplier quotes or personal identity documents. [Private business contact](mailto:causeway@561.group?subject=Private%20Shop%20Services%20inquiry) is available.
+  - type: input
+    id: original-shop
+    attributes:
+      label: Your actual Shop or publicly accessible offer URL
+      description: "Link to the original Shop, not a copied supplier catalog. Include no private account identifier."
+      placeholder: "https://your-shop.example.com"
+    validations:
+      required: true
+  - type: dropdown
+    id: source-rights
+    attributes:
+      label: Your authority for that Shop
+      options:
+        - I operate this Shop and may request services for it
+        - I have the Shop owner's explicit authorization to inquire
+        - I am researching possibilities, not yet authorized to commit this Shop
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Which independently selectable service(s) are interesting?
+      multiple: true
+      options:
+        - Print-on-demand product/variant sourcing and fulfillment
+        - Print design preparation and physically testable merchandise
+        - Optional shop advertising on qualified 561 Group publisher slots
+        - Other supplier-backed services for this Shop
+    validations:
+      required: true
+  - type: textarea
+    id: customer-job
+    attributes:
+      label: What useful result do you need?
+      description: "For POD: actual garment or other item and customer destination. For ads: advertised product URL, relevant topic/context and possible dates. Public details only."
+      placeholder: "We sell custom cotton tees to EU buyers and want a quoted printed/shipped product; separately curious about business-market contextual placement."
+    validations:
+      required: true
+  - type: input
+    id: price-envelope
+    attributes:
+      label: Indicative budget or acceptable total cost (optional)
+      description: "Specify currency, whether tax/shipping is included, and a budget ceiling if known. This is NOT spending authorization."
+      placeholder: "Example: print + ship under EUR 18/item; or ad budget TBD"
+    validations:
+      required: false
+  - type: input
+    id: existing-supplier
+    attributes:
+      label: Current publicly named supplier or alternate solution (optional)
+      description: "TPOP, Printify, Printful, in-house production, your existing publisher, etc. This does not confer supplier API access."
+      placeholder: "https://www.tpop.com/en"
+    validations:
+      required: false
+  - type: textarea
+    id: receiving
+    attributes:
+      label: How will you judge whether this service actually worked?
+      description: "For POD: accepted quote, sample, production/ship/refund. For ads: authorized placement, disclosure, actual publication and report. Do not include customers' personal details."
+      placeholder: "Acceptable quote and printed sample first. We will separately approve any customer order or ad spend."
+    validations:
+      required: false
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Your permissions and expectations
+      options:
+        - label: "I understand this is a public inquiry only, not an order, supplier-contract acceptance, ad booking or permission to charge money."
+          required: true
+        - label: "I understand that my Shop's original customer/merchant identity and copyrights remain separate from the supplier and Bazaar, and that fees require a distinct quote and approval."
+          required: true
+        - label: "I have not supplied confidential account, payment, purchaser or protected artwork data in this public form."
+          required: true
