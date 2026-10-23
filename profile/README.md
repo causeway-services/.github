@@ -8,6 +8,10 @@
 
 **A 561 Group organization.** Public services: gives people usable free-software rights and practical ways to learn, operate, challenge, contribute and benefit.
 
+## Public tools are meant to be used
+
+Causeway's [free First Commission Worksheet](https://github.com/causeway-services/artificial-intelligence-curriculum-enterprise/blob/main/content/marketing/agent-operator-first-commission-workbook.md) and [the original Group Shop source](https://github.com/causeway-services/shop.561.group) are work you can inspect before spending anything. If they're useful or simply make you glad somebody is building in the open, [send a one-time appreciation tip](https://buy.stripe.com/9B68wQ9HA50ub2Yen25EY04) ($5–$10,000, with $250 suggested). The checkout's legal merchant is emsenn; all existing public licensing and independent critique remain unchanged.
+
 The 561 Group is operated by Morgan Sennhauser. Its work moves from science to engineering to operations to public
 services, and each step has its own organization:
 
