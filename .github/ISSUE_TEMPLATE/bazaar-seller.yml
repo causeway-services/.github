@@ -1,0 +1,87 @@
+name: "Apply to join the Bazaar seller pilot"
+description: "A public opt-in request from an independently operated Shop. No fees or checkout changes occur when you submit."
+title: "[Bazaar seller] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Apply to present your own goods or services in Bazaar.** We are testing a federated multi-seller shopping venue where the original seller controls its shop, price, checkout, customer commitments, and revenue.
+
+        This is a public GitHub issue. Share **public business information only**. Never paste account credentials, API keys, private identity documents, buyer data, unpublished cultural materials, wallet recovery phrases, or sensitive financial records. Listing is subject to individual review and is not yet a purchase capability.
+  - type: input
+    id: original-shop
+    attributes:
+      label: Your original Shop or public product catalog
+      description: "An HTTPS address YOU operate or are authorized to represent, not a copy of another seller's inventory."
+      placeholder: "https://your-shop.example.com"
+    validations:
+      required: true
+  - type: input
+    id: enterprise
+    attributes:
+      label: Public selling enterprise and shop name
+      description: "Who is the accountable merchant of record? Use the public business name. Do not include non-public legal identifiers."
+      placeholder: "Example Studio / merchant shown at checkout"
+    validations:
+      required: true
+  - type: dropdown
+    id: kinds
+    attributes:
+      label: What can a buyer purchase or support?
+      multiple: true
+      options:
+        - Digital goods and downloadable works
+        - Physical goods
+        - Professional services or commissions
+        - One-time voluntary tips
+        - Recurring voluntary support
+        - Paid memberships and benefits
+        - Software, data or API services
+    validations:
+      required: true
+  - type: textarea
+    id: first-offer
+    attributes:
+      label: First offer a real buyer can inspect
+      description: "Public item/service link, current price or price basis, currency, availability, any delivery restriction, and what happens if a sale fails."
+      placeholder: "Offer URL; USD 20 one-time; existing Checkout at my site; download delivered immediately; refund policy link."
+    validations:
+      required: true
+  - type: input
+    id: original-checkout
+    attributes:
+      label: Your existing merchant-controlled checkout or payment information URL
+      description: "A public HTTPS URL to documented checkout/payment terms (if available). Never paste keys or private payee details."
+      placeholder: "https://your-shop.example.com/checkout-or-payment-terms"
+    validations:
+      required: false
+  - type: dropdown
+    id: seller-control
+    attributes:
+      label: Your relationship to this Shop
+      options:
+        - I operate and control the original selling enterprise
+        - I have explicit authority from the original seller to apply
+        - I am exploring but do not yet have seller authorization
+    validations:
+      required: true
+  - type: textarea
+    id: interoperability
+    attributes:
+      label: Integration and availability details
+      description: "Optional: JSON product feed, ActivityPub actor, MCP/API, supported payment provider, country restrictions, inventory limits, accessibility, and revision or withdrawal endpoint."
+      placeholder: "Public feeds and published policies only; unknown details are okay."
+    validations:
+      required: false
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Seller consent and boundaries
+      description: "Consent here permits application review only; actual Bazaar listing and hosted presentation require separate, verified seller authorization."
+      options:
+        - label: "I have permission to submit the public Shop and offers described here for review."
+          required: true
+        - label: "I understand that this issue does not move my money, transfer my customer records, authorize 561 Group to resell my goods, or create a contract."
+          required: true
+        - label: "I understand this public application is neither guaranteed listing nor working cross-seller checkout, and I can withdraw this application."
+          required: true
