@@ -4,6 +4,7 @@
 
 - **Sell or receive support:** [Apply with your own Shop or public offer](https://github.com/causeway-services/.github/issues/new?template=bazaar-seller.yml).
 - **Find something worth buying:** [Describe a real buyer need](https://github.com/causeway-services/.github/issues/new?template=bazaar-buyer.yml).
+- **Buy optional Shop services:** [Request POD supply/fulfillment or context-matched advertising](https://github.com/causeway-services/.github/issues/new?template=bazaar-shop-service.yml). [Current actual service scope, costs and supplier limits](https://github.com/causeway-services/.github/blob/main/SHOP-SERVICES.md). No supplier order or paid ad is booked by a request.
 - **No GitHub account or need to discuss a private commercial matter?** [Contact Causeway Services](mailto:causeway@561.group?subject=Bazaar%20independent%20seller%20or%20buyer%20inquiry). Never publish confidential terms in GitHub issues.
 
 ## This is not a storefront-redirect scheme
@@ -21,6 +22,10 @@ You can apply whether you sell digital books, downloadable artwork, physical wor
 You retain your own public identity, original shop URL, pricing, policies, payment provider, fulfillment duties, customers, cancellation/refund obligations and ability to withdraw. An opt-in issue permits us to **review your public shop**; it does not permit us to copy your customers, move funds, create a synthetic listing, insert a payment intermediary or resell anything. Our operator must separately verify that the submitter actually controls the seller or has written authority to act for them.
 
 We will check a real public offer, original seller and payee, current availability, the relevant price/currency, rights to sell, delivery/refund policies and whether the seller consents to a specific display/checkout integration. If your current shop cannot safely support an in-Bazaar buying journey, we can discuss options without pretending a referral link is a completed Bazaar purchase. A public application has no fee; **future optional Bazaar service charges have not been set or promised at zero**.
+
+## Buy supplier-backed services as a Shop
+
+A consenting Shop may independently ask for original print-product fulfillment (with the Shop retaining its merchant/payee and customer obligations), separately quoted branded production/3PL management, or contextual advertising on qualified 561 publisher slots. We have identified [TPOP](https://www.tpop.com/en/) as **both** a competing all-in-one Shop/POD platform and an *uncontracted* potential upstream printing supplier. [Read the actual supplier-backed commerce and ad-selling scope](https://github.com/causeway-services/.github/blob/main/SHOP-SERVICES.md). No general TPOP reseller API, merchant agreement, inventory/price/returns quote, automatic Bazaar checkout or network advertising slot is assumed. These are optional jobs, not fees required to list or buy goods through Bazaar.
 
 ## For a buyer
 
