@@ -1,0 +1,66 @@
+name: "Find a product, service, or creator"
+description: "Tell Bazaar what you want to buy or support. A request is not an order or payment authorization."
+title: "[Bazaar buyer] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **What would you actually buy?** Bazaar is testing independent-seller discovery and matching, not charging buyers from GitHub issues. This is a public request, not a purchase, reservation, or promise of fulfillment.
+
+        Do not post personal addresses, payment details, private documents, sensitive cultural data, credentials, or confidential customer information. For a private inquiry, use the existing Causeway business contact instead.
+  - type: dropdown
+    id: job
+    attributes:
+      label: Which customer job matters?
+      options:
+        - Buy a digital product or book
+        - Buy a physical item
+        - Hire a creator or professional for a commission
+        - Send a one-time voluntary tip
+        - Support a creator repeatedly
+        - Purchase a paid membership or benefit
+        - Purchase software, data, compute or an API
+        - Find and compare independent sellers
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What would a satisfactory purchase deliver?
+      description: "Describe the usable outcome, expected quality and any important exclusions; avoid an abstract wish list."
+      placeholder: "A PDF booklet on ... with a valid license, delivered within one day; existing small sellers preferred."
+    validations:
+      required: true
+  - type: input
+    id: budget
+    attributes:
+      label: Indicative total buyer budget
+      description: "Optional; name currency and whether processing/shipping/tax should be included. No payment credentials."
+      placeholder: "Up to USD 40 total including applicable fees"
+    validations:
+      required: false
+  - type: input
+    id: when
+    attributes:
+      label: When is the product or service needed?
+      description: "Optional. A deadline is not an accepted order or capacity reservation."
+      placeholder: "Within 2 weeks, or no deadline"
+    validations:
+      required: false
+  - type: textarea
+    id: preferences
+    attributes:
+      label: Seller and transaction preferences
+      description: "Optional: independent seller links, permitted geography, accessibility, formats, preferred payment method and delivery restrictions."
+      placeholder: "Would buy from an independently controlled store if I can verify the original payee and refund policy."
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Understanding of this public buyer signal
+      options:
+        - label: "I understand this request is public and is not a checkout, pledge, purchase order, or permission to spend money."
+          required: true
+        - label: "I will verify original seller terms and payee and explicitly authorize any later transaction myself."
+          required: true
