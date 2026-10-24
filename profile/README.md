@@ -8,6 +8,8 @@
 
 **A 561 Group organization.** Public services: gives people usable free-software rights and practical ways to learn, operate, challenge, contribute and benefit.
 
+**Start with something usable:** [Causeway's public services guide](https://services.561.group/) points to available publications, resources and service explanations, with a separate [561 Group work inquiry](https://561.group/work/) for scoped problems. A customer can examine a free resource before deciding whether to buy anything. The Group is developing broader professional search, AI-discovery and marketing services, but a research requirement or a proposed pilot is not a launched commercial subscription or a guaranteed ranking result.
+
 ## Bazaar: real sellers, real customer demand
 
 **Own a store or create something people can buy?** [Apply to the independent-seller Bazaar pilot](https://github.com/causeway-services/.github/issues/new?template=bazaar-seller.yml). You keep your original shop, merchant, checkout and rights; applying does not enroll or charge you. **Need a maker, download, commission or paid service?** [Submit a buyer need](https://github.com/causeway-services/.github/issues/new?template=bazaar-buyer.yml). [What this pilot actually does and does not do](https://github.com/causeway-services/.github/blob/main/BAZAAR.md). Public issues are not appropriate for private customer or payment information.
