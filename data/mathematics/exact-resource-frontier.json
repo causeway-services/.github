@@ -1,0 +1,221 @@
+{
+  "kind": "561.public.matematical-work-observation/v1",
+  "subject": "Exact resource-budget allocation frontier / agent-callable mathematical sample",
+  "observedAt": "2026-10-24T23:43:05.671Z",
+  "source": {
+    "repository": "red-cup-engineering/math-engineering-services-section",
+    "sourceCommit": "abc04fdb212c9a1302bfba08c3707e38ddfc0a9d",
+    "operation": "computeExactResourceMathWork",
+    "exactArithmetic": "Fraction(BigInt)",
+    "originalVerifier": "verifyResourceFlowCertificate",
+    "research": "https://github.com/lenticule-science/math-science-services-section/blob/main/content/text/documents/articles/research-articles/exact-resource-budget-frontier.md"
+  },
+  "request": {
+    "network": {
+      "nodes": [
+        "source",
+        "lowcost",
+        "highercost",
+        "recipient"
+      ],
+      "links": [
+        {
+          "id": "first_leg",
+          "from": "source",
+          "to": "lowcost",
+          "capacity": "4",
+          "unitResourceCost": "1/5"
+        },
+        {
+          "id": "cheap_delivery",
+          "from": "lowcost",
+          "to": "recipient",
+          "capacity": "4",
+          "unitResourceCost": "1/5"
+        },
+        {
+          "id": "second_leg",
+          "from": "source",
+          "to": "highercost",
+          "capacity": "6",
+          "unitResourceCost": "1"
+        },
+        {
+          "id": "other_delivery",
+          "from": "highercost",
+          "to": "recipient",
+          "capacity": "6",
+          "unitResourceCost": "1"
+        }
+      ],
+      "sources": [
+        {
+          "node": "source",
+          "capacity": "10"
+        }
+      ],
+      "demands": [
+        {
+          "node": "recipient",
+          "amount": "10"
+        }
+      ]
+    },
+    "budgets": [
+      "0",
+      "1",
+      "2",
+      "10",
+      "100"
+    ]
+  },
+  "response": {
+    "operation": "exact-resource-frontier",
+    "version": "1",
+    "frontierType": "exact-continuous-budget-to-throughput-pareto-envelope/v1",
+    "resourceBudgetCurrency": "no monetary asset implied; caller selects coherent physical or abstract resource units",
+    "optimizationPasses": 1,
+    "checkedUnbudgetedOriginal": {
+      "verified": true,
+      "claim": "exact primal feasibility, minimum cost at this throughput and budget-optimal delivered volume under fixed linear rational costs",
+      "verifiedDelivered": "10",
+      "verifiedResourceCost": "68/5",
+      "residualAdditionalUnitCost": null,
+      "scope": "algebraic model only: not real hydraulic feasibility, physical datum, policy or rights"
+    },
+    "checkedUnbudgetedReference": {
+      "verified": true,
+      "claim": "exact primal feasibility, minimum cost at this throughput and budget-optimal delivered volume under fixed linear rational costs",
+      "verifiedDelivered": "10",
+      "verifiedResourceCost": "68/5",
+      "residualAdditionalUnitCost": null,
+      "scope": "algebraic model only: not real hydraulic feasibility, physical datum, policy or rights"
+    },
+    "originalOptimum": {
+      "maximumDelivery": "10",
+      "minimumResourceForMaximumDelivery": "68/5",
+      "remainingDemand": "0",
+      "independentResidualPotentials": [
+        "-2",
+        "-1/5",
+        "-1",
+        "0",
+        "-2",
+        "0"
+      ]
+    },
+    "marginalCostFrontier": [
+      {
+        "fromDelivered": "0",
+        "untilDelivered": "4",
+        "fromResourceCost": "0",
+        "untilResourceCost": "8/5",
+        "resourceCostPerDeliveredUnit": "2/5"
+      },
+      {
+        "fromDelivered": "4",
+        "untilDelivered": "10",
+        "fromResourceCost": "8/5",
+        "untilResourceCost": "68/5",
+        "resourceCostPerDeliveredUnit": "2"
+      }
+    ],
+    "budgetQuotes": [
+      {
+        "index": 0,
+        "budget": "0",
+        "maximumDelivery": "0",
+        "minimumResourceForMaximumDelivery": "0",
+        "unspentResource": "0",
+        "nextMarginalResourcePerDeliveredUnit": "2/5",
+        "demandComplete": false,
+        "networkLimited": false,
+        "certificateScope": "exact arithmetic projection of source optimizer's full marginal flow; no independent intermediate primal flow asserted"
+      },
+      {
+        "index": 1,
+        "budget": "1",
+        "maximumDelivery": "5/2",
+        "minimumResourceForMaximumDelivery": "1",
+        "unspentResource": "0",
+        "nextMarginalResourcePerDeliveredUnit": "2/5",
+        "demandComplete": false,
+        "networkLimited": false,
+        "certificateScope": "exact arithmetic projection of source optimizer's full marginal flow; no independent intermediate primal flow asserted"
+      },
+      {
+        "index": 2,
+        "budget": "2",
+        "maximumDelivery": "21/5",
+        "minimumResourceForMaximumDelivery": "2",
+        "unspentResource": "0",
+        "nextMarginalResourcePerDeliveredUnit": "2",
+        "demandComplete": false,
+        "networkLimited": false,
+        "certificateScope": "exact arithmetic projection of source optimizer's full marginal flow; no independent intermediate primal flow asserted"
+      },
+      {
+        "index": 3,
+        "budget": "10",
+        "maximumDelivery": "41/5",
+        "minimumResourceForMaximumDelivery": "10",
+        "unspentResource": "0",
+        "nextMarginalResourcePerDeliveredUnit": "2",
+        "demandComplete": false,
+        "networkLimited": false,
+        "certificateScope": "exact arithmetic projection of source optimizer's full marginal flow; no independent intermediate primal flow asserted"
+      },
+      {
+        "index": 4,
+        "budget": "100",
+        "maximumDelivery": "10",
+        "minimumResourceForMaximumDelivery": "68/5",
+        "unspentResource": "432/5",
+        "nextMarginalResourcePerDeliveredUnit": null,
+        "demandComplete": true,
+        "networkLimited": false,
+        "certificateScope": "exact arithmetic projection of source optimizer's full marginal flow; no independent intermediate primal flow asserted"
+      }
+    ],
+    "claim": "one exact rational shortest-augmentation Pareto envelope, 1-32 derived budgets with one original optimization",
+    "excludedClaims": [
+      "independent intermediate primal certificates",
+      "supply rights",
+      "hydraulic headloss",
+      "nonlinear pressure",
+      "measured source capacity",
+      "spending authorization",
+      "paid customer fulfillment"
+    ],
+    "marketOperation": "original-mathematical-resource-work/v1",
+    "admittedMode": "exact-resource-frontier",
+    "merchantAndPaymentAuthority": "owned by original Market seller; no source operation can authorize cash spending"
+  },
+  "interface": {
+    "method": "GET",
+    "mediaType": "application/json",
+    "delivery": "public immutable source example; not dynamic POST computation",
+    "merchant": {
+      "origin": "https://market.561.group",
+      "candidateRoute": "/v1/mathematics/exact-resource-flow",
+      "saleStatus": "held",
+      "cashReceived": false
+    }
+  },
+  "scope": {
+    "realExecution": true,
+    "workloadKind": "declared illustrative network, not provider observation",
+    "physicalCapacitiesIndependentlyReceived": false,
+    "outsideBuyerAccepted": false,
+    "expenditureNewCash": "0",
+    "runtimeCost": "not measured outside isolated V8"
+  },
+  "value": {
+    "budgetVariants": 5,
+    "sourceOptimizerExecutions": 1,
+    "sourcePrimalDualChecks": [
+      true,
+      true
+    ]
+  }
+}
