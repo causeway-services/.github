@@ -1,0 +1,117 @@
+name: Bazaar public seller page source verification
+
+# Original Causeway Bazaar pilot intake: Coesite provider-market Work #5,
+# first real opt-in review causeway-services/.github#8.
+# An operator must first establish public-review consent. The workflow only
+# reads public pages and the seller's public source; it cannot admit a Party,
+# approve a listing, create a payment, or infer seller consent to publication.
+on:
+  pull_request:
+    paths:
+      - .github/workflows/bazaar-public-seller-pages.yml
+      - .github/ISSUE_TEMPLATE/bazaar-seller.yml
+  workflow_dispatch:
+    inputs:
+      seller_repository:
+        description: Public GitHub Pages owner/repo, after application review consent
+        required: true
+        type: string
+        default: livastic-vm1-primary/paperpilot-tools
+      seller_ref:
+        description: Public original source branch/ref; selection is recorded by commit
+        required: true
+        type: string
+        default: main
+
+permissions:
+  contents: read
+
+jobs:
+  verify-published-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Select the original Causeway qualification procedure
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Read original independent seller's public source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: ${{ inputs.seller_repository || 'livastic-vm1-primary/paperpilot-tools' }}
+          ref: ${{ inputs.seller_ref || 'main' }}
+          path: public-original-seller
+          persist-credentials: false
+          submodules: false
+      - name: Receive public HTTP and compare exact immutable source files
+        shell: bash
+        env:
+          SELLER_REPOSITORY: ${{ inputs.seller_repository || 'livastic-vm1-primary/paperpilot-tools' }}
+        run: |
+          set -euo pipefail
+          repo="$SELLER_REPOSITORY"
+          if [[ ! "$repo" =~ ^[A-Za-z0-9][A-Za-z0-9-]{0,38}/[A-Za-z0-9._-]{1,100}$ ]]; then
+            echo 'Refused: noncanonical public GitHub owner/repo coordinate'
+            exit 2
+          fi
+          owner="${repo%%/*}"
+          name="${repo#*/}"
+          if [[ "$name" == '.' || "$name" == '..' || "$name" == .* ]]; then
+            echo 'Refused: noncanonical public GitHub repository path'
+            exit 2
+          fi
+          source_sha="$(git -C public-original-seller rev-parse HEAD)"
+          if [[ ! "$source_sha" =~ ^[a-f0-9]{40}$ ]]; then
+            echo 'Refused: seller source commit not independently pinned'
+            exit 2
+          fi
+          origin="https://${owner,,}.github.io/$name"
+          printf 'Review-only original seller: %s\nImmutable GitHub source commit: %s\nPublic origin: %s\n' "$repo" "$source_sha" "$origin"
+          echo "## Read-only public original seller Pages check" >> "$GITHUB_STEP_SUMMARY"
+          printf 'Application review only; no listing/payment/delivery approval. Original seller: `%s` at source `%s`.\n\n' "$repo" "$source_sha" >> "$GITHUB_STEP_SUMMARY"
+          echo '| Original path | Independent HTTP | Source byte parity |' >> "$GITHUB_STEP_SUMMARY"
+          echo '| :--- | :--- | :--- |' >> "$GITHUB_STEP_SUMMARY"
+          failed=0
+          for path in order.html catalog.json services.html; do
+            source="public-original-seller/$path"
+            if [[ ! -f "$source" || -L "$source" ]]; then
+              printf '| `%s` | Not attempted | Original path missing/unsafe |\n' "$path" >> "$GITHUB_STEP_SUMMARY"
+              failed=1
+              continue
+            fi
+            if (( $(wc -c < "$source") > 262144 )); then
+              printf '| `%s` | Not attempted | Source exceeds 256 KiB |\n' "$path" >> "$GITHUB_STEP_SUMMARY"
+              failed=1
+              continue
+            fi
+            target="$(mktemp)"
+            # No cookies, credentials, redirect-following, payment, or seller
+            # page code execution. The strict github.io origin is derived from
+            # the checked-out original public repo, never a seller-supplied URL.
+            meta="$(curl --silent --show-error --proto '=https' --max-redirs 0 --max-time 12 --max-filesize 262144 \
+              --output "$target" --write-out '%{http_code}|%{content_type}' "$origin/$path")" || meta='transport-failure|unknown'
+            status="${meta%%|*}"
+            mime="${meta#*|}"
+            good_http=false
+            if [[ "$status" == 200 && $(wc -c < "$target") -le 262144 ]]; then
+              if [[ "$path" == catalog.json && "$mime" == application/json* ]]; then
+                if python3 -m json.tool "$target" >/dev/null 2>&1; then good_http=true; fi
+              elif [[ "$path" != catalog.json && "$mime" == text/html* ]]; then
+                good_http=true
+              fi
+            fi
+            parity='mismatch / not verified'
+            if [[ "$good_http" == true ]] && cmp --silent "$source" "$target"; then
+              parity='exact bytes at pinned source commit'
+            fi
+            if [[ "$good_http" != true || "$parity" != 'exact bytes at pinned source commit' ]]; then failed=1; fi
+            printf '| `%s` | `%s` / `%s` | %s |\n' "$path" "$status" "$mime" "$parity" >> "$GITHUB_STEP_SUMMARY"
+            printf '%s HTTP=%s MIME=%s exact_source=%s\n' "$path" "$status" "$mime" "$parity"
+            rm -f -- "$target"
+          done
+          printf '\n**Not tested:** merchant identity, service license/refunds, seller-specific listing authorization, buyer consent, checkout, payment, fulfillment, support or settled cash. The check is valid only at its run time and the stated runner vantage.\n' >> "$GITHUB_STEP_SUMMARY"
+          if (( failed != 0 )); then
+            echo 'HOLD: a public page or immutable-source check did not qualify; no listing permission inferred.'
+            exit 1
+          fi
+          echo 'RECEIVED: public Pages responded with matching original source bytes; legal seller and Bazaar rights remain unqualified.'

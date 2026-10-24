@@ -47,6 +47,18 @@ body:
       placeholder: "Offer URL; USD 20 one-time; existing Checkout at my site; download delivered immediately; refund policy link."
     validations:
       required: true
+  - type: dropdown
+    id: purchase-path
+    attributes:
+      label: How can an actual buyer obtain this offer today?
+      description: "Choose only what already works at your original Shop. Manual inquiries are welcome, but are not working automated checkout or proof of a completed order."
+      options:
+        - Original seller's working hosted checkout (buyer authorizes any payment there)
+        - Manual buyer-initiated inquiry; written terms before any separate payment
+        - Original seller reviews commission requests and quotes each individually
+        - No currently active purchase path; public-source review only
+    validations:
+      required: true
   - type: input
     id: original-checkout
     attributes:
