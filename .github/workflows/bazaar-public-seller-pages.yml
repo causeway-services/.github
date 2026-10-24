@@ -9,7 +9,7 @@ on:
   pull_request:
     paths:
       - .github/workflows/bazaar-public-seller-pages.yml
-      - BAZAAR.md
+      - .github/ISSUE_TEMPLATE/bazaar-seller.yml
   workflow_dispatch:
     inputs:
       seller_repository:
