@@ -28,9 +28,11 @@ Example with curl and jq, no credential:
 curl -fsSL \
   https://raw.githubusercontent.com/red-cup-engineering/paid-data-endpoint-service/main/data/records/newswire/federal-register/comment-deadlines.json |
 jq --arg agency "Environmental Protection Agency" \
-  '{observedAt, horizonDays, matches: [.records[]
-    | select(.agencies[]? == $agency)
-    | {documentNumber, title, commentsCloseOn, daysAfterUtcDate, documentUrl, sourceEdition}]}'
+  'if .sourceCoverage.complete != true then error("official source query incomplete") else . end
+   | {observedAt, horizonDays, sourceQuery, matches: [.records[]
+       | select(.sourcePublicationDateState == "source-date-on-or-before-our-observation")
+       | select(.agencies[]? == $agency)
+       | {documentNumber, title, commentsCloseOn, daysAfterUtcDate, documentUrl, sourceEdition}]}'
 ~~~
 
 For revision awareness, read changes.json and preserve the edition NI along
@@ -46,6 +48,17 @@ The first independently received edition, October 24, 2026, covered one
 seven-day Federal Register window: 469 real government source documents in
 five official API requests, retaining 673,066 decoded response bytes and
 deriving 100 source-reported comment deadlines within the next 30 civil days.
+**Corrected actual customer job:** A direct official comment-date query for
+October 24–November 23 received **723** original deadline records in eight
+additional government requests, with complete query coverage. **623 of those
+723** were in older publication-date cohorts and were missing from the
+initial last-seven-days-only deadline product. This improved 7.23x source
+coverage, **not** real purchases, legal certainty or profit. In the corrected
+dated source, two rows have publication dates after the observation date;
+their source-publication-date state is explicit and they must not be presumed
+currently published or open for filing. A buyer must independently read the
+current official edition and its corrections.
+
 Later editions will differ. The publication runs on a three-hour cadence;
 independent Coesite receiving observes whether the HTTP goods really arrived.
 Check each published observation timestamp before deciding that data are
