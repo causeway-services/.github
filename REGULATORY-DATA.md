@@ -90,3 +90,17 @@ are NOT a purchased x402 endpoint, and a quote or a simulated customer
 cannot substantiate $200/day revenue. Source acquisition and transformation
 operated without new cash payments; physical/cloud resources and merchant
 margins remain separately unmeasured.
+
+## Validate your downstream JSON without buying the source data
+
+If your integration needs a machine check of a saved JSON value against your
+own schema, the existing Market offers `POST /v1/data/json-schema-validate`
+at an advertised starting price of 0.0012 USDC, varying with canonical JSON
+request size. [Read the current catalog](https://market.561.group/v1/catalog)
+and [OpenAPI contract](https://market.561.group/openapi.json), then use your
+authorized x402 client to review the live quote and pay only within your own
+spending ceiling. This checks the submitted value and explicit schema corpus;
+it does not determine a regulation's applicability, verify the source facts or
+submit anything to a government agency. An incomplete evaluation must not be
+treated as a passing check. The public Federal Register distributions above
+remain free.
