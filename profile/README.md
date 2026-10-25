@@ -35,12 +35,12 @@ before sending an authorized input.
 
 | Buyer job | Existing POST endpoint | Advertised price |
 | --- | --- | --- |
-| Validate a JSON value against your explicit schema corpus | `/v1/data/json-schema-validate` | 0.0012 USDC |
+| Validate a JSON value against your explicit schema corpus | `/v1/data/json-schema-validate` | From 0.0012 USDC |
 | Diagnose structure against the fixed official SPDX 2.3 schema | `/v1/assurance/spdx-2-3/schema-check` | 0.05 USDC |
 
 For the first service, submit `schema` and `value`; optional `schemas`,
 `dialect`, `baseUri` and `assertFormats` select the documented native
-evaluation. Preserve the distinction between an evaluated invalid value and
+evaluation. Its price varies with the canonical JSON request size. Preserve the distinction between an evaluated invalid value and
 an incomplete evaluation. For the SPDX service, submit the SBOM JSON object
 itself, up to 32,768 UTF-8 request bytes; invalid documents are paid diagnostic
 results. Neither service fetches your API or repairs it.
@@ -88,7 +88,7 @@ services, and each step has its own organization:
 
 **Prefer to fund ongoing work?** [Sustain 561 Group research and technical infrastructure for $10 USD/month](https://buy.stripe.com/28E28s1b4gJcb2Y3Io5EY02). This is the existing live recurring Stripe link, not a Causeway checkout or a new product. The legal merchant is identified at checkout. Support renews monthly until canceled, grants no goods, special access or editorial influence, and is not a charitable tax-deductible donation. [Billing/cancellation help](https://561.group/contact/).
 
-**Looking for already authored assets?** Browse the original [Causeway Shop](https://shop.561.group/) and [Market](https://market.561.group/) surfaces for available descriptions; product listings and payment readiness are separately qualified by their own sellers. This profile makes no claim that a particular checkout, API or publication is currently running.
+**Looking for already authored assets?** Browse the original [Causeway Shop](https://shop.561.group/) and [Market](https://market.561.group/) surfaces for available descriptions; product listings and payment readiness are separately qualified by their own sellers. A listing alone does not establish paid delivery or continued availability; inspect the current seller contract and live response.
 
 - **Licensing.** A repository's own LICENSE file governs it. Indigenous cultural material is never put under an open
   license; see [Governance and Indigenous data](https://github.com/causeway-services/.github/blob/main/GOVERNANCE.md).

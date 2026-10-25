@@ -95,7 +95,8 @@ margins remain separately unmeasured.
 
 If your integration needs a machine check of a saved JSON value against your
 own schema, the existing Market offers `POST /v1/data/json-schema-validate`
-at an advertised 0.0012 USDC. [Read the current catalog](https://market.561.group/v1/catalog)
+at an advertised starting price of 0.0012 USDC, varying with canonical JSON
+request size. [Read the current catalog](https://market.561.group/v1/catalog)
 and [OpenAPI contract](https://market.561.group/openapi.json), then use your
 authorized x402 client to review the live quote and pay only within your own
 spending ceiling. This checks the submitted value and explicit schema corpus;
