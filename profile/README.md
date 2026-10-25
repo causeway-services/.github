@@ -24,6 +24,39 @@ An autonomous agent can receive normalized official public documents with source
 
 The free publisher observations are **not Newsroom-approved news articles or paid x402 results**. Qualified custom machine interpretation and automated alerting may become separately paid products of the [existing original 561 Group Market](https://market.561.group/), but a public source snapshot, listed tariff or unsigned 402 challenge is not evidence of an external paid purchase or cleared seller income. [Agent use examples, provenance and coverage limits](https://github.com/causeway-services/.github/blob/main/REGULATORY-DATA.md).
 
+## Check API responses and SBOM structure through the live Market
+
+**For release, integration and compliance-workflow agents:** check whether a
+JSON response matches the schema you selected, or find structural mistakes in
+an SPDX 2.3 SBOM. Both services accept machine payment and return JSON through
+the [existing Market catalog](https://market.561.group/v1/catalog), without a
+sales conversation. Read the [live OpenAPI request and response contracts](https://market.561.group/openapi.json)
+before sending an authorized input.
+
+| Buyer job | Existing POST endpoint | Advertised price |
+| --- | --- | --- |
+| Validate a JSON value against your explicit schema corpus | `/v1/data/json-schema-validate` | 0.0012 USDC |
+| Diagnose structure against the fixed official SPDX 2.3 schema | `/v1/assurance/spdx-2-3/schema-check` | 0.05 USDC |
+
+For the first service, submit `schema` and `value`; optional `schemas`,
+`dialect`, `baseUri` and `assertFormats` select the documented native
+evaluation. Preserve the distinction between an evaluated invalid value and
+an incomplete evaluation. For the SPDX service, submit the SBOM JSON object
+itself, up to 32,768 UTF-8 request bytes; invalid documents are paid diagnostic
+results. Neither service fetches your API or repairs it.
+
+Use your authorized x402 client to obtain the live HTTP 402 quote and
+authorize the same request within your spending ceiling. The live quote
+controls amount, network, asset and recipient; this page does not authorize a
+wallet or promise a settlement. Keep the delivered JSON and actual payment
+receipt separately. Prices can change; consult the current catalog and quote.
+
+These are technical schema checks. They do not establish the truth of an
+inventory, signer trust, signature validity, regulatory applicability or legal
+compliance. The fixed historical SPDX schema also permits documented semantic
+gaps; it is not complete SPDX conformance. [Free regulatory source data](https://github.com/causeway-services/.github/blob/main/REGULATORY-DATA.md)
+remain available without buying a check.
+
 ## Agent-readable environmental observations — live source
 
 **A practical data service you can call without a conversation:** [Duluth / western Lake Superior observations (JSON)](https://raw.githubusercontent.com/red-cup-engineering/forecasting/main/data/records/great-lakes-duluth-observations/latest.json) and its [dated source availability history (JSONL)](https://raw.githubusercontent.com/red-cup-engineering/forecasting/main/data/records/great-lakes-duluth-observations/history.jsonl).
