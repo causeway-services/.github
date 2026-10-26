@@ -28,7 +28,7 @@ The free publisher observations are **not Newsroom-approved news articles or pai
 
 **For release, integration and compliance-workflow agents:** check whether a
 JSON response matches the schema you selected, or find structural mistakes in
-an SPDX 2.3 SBOM. Both services accept machine payment and return JSON through
+an SPDX 2.3 SBOM or CycloneDX 1.6 software/model inventory. These services accept machine payment and return JSON through
 the [existing Market catalog](https://market.561.group/v1/catalog), without a
 sales conversation. Read the [live OpenAPI request and response contracts](https://market.561.group/openapi.json)
 before sending an authorized input.
@@ -37,13 +37,23 @@ before sending an authorized input.
 | --- | --- | --- |
 | Validate a JSON value against your explicit schema corpus | `/v1/data/json-schema-validate` | From 0.0012 USDC |
 | Diagnose structure against the fixed official SPDX 2.3 schema | `/v1/assurance/spdx-2-3/schema-check` | 0.05 USDC |
+| Diagnose fixed CycloneDX 1.6 software/model inventory structure | `/v1/assurance/cyclonedx-1-6/schema-check` | 0.01 USDC |
 
 For the first service, submit `schema` and `value`; optional `schemas`,
 `dialect`, `baseUri` and `assertFormats` select the documented native
 evaluation. Its price varies with the canonical JSON request size. Preserve the distinction between an evaluated invalid value and
 an incomplete evaluation. For the SPDX service, submit the SBOM JSON object
 itself, up to 32,768 UTF-8 request bytes; invalid documents are paid diagnostic
-results. Neither service fetches your API or repairs it.
+results. These checks evaluate the submitted JSON.
+
+For CycloneDX, submit the BOM object itself with `specVersion` exactly `1.6`,
+up to 131,072 UTF-8 bytes. The service retains the official OWASP schema and
+both fixed companion schemas; it makes no per-request source download. Use
+its JSON-pointer/keyword issues in your build or release workflow, correct
+the source inventory and authorize a later check when useful. Keep engine
+failure separate from an invalid document. `idn-email` and `iri-reference`
+are annotations in this evaluator; an empty inventory/model card can pass.
+Full official source: [CycloneDX 1.6, pinned source edition](https://github.com/CycloneDX/specification/tree/ad83dae28b236b8760286399da4daba77592de86).
 
 Use your authorized x402 client to obtain the live HTTP 402 quote and
 authorize the same request within your spending ceiling. The live quote
