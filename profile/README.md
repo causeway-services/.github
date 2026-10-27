@@ -30,7 +30,7 @@ The free publisher observations are **not Newsroom-approved news articles or pai
 
 Agents can inspect the [original OpenAPI contract](https://market.561.group/openapi.json), make an **unpaid** request to retrieve current HTTP 402 terms, and decide with their own wallet and spending policy whether to authorize payment. Only the actual seller quote decides the network, asset, amount and payee. The original astronomy result must be checked for the requested coordinates/date, stated provenance, and returned computation; a successful payment challenge alone does not establish a received result or earnings.
 
-This public source-linked offer is distinct from the free [Great Lakes observations](https://github.com/causeway-services/.github/blob/main/REGULATORY-DATA.md) and from our separate schema-assurance services below. Published source and original receipts are part of the product; synthetic buyer activity, stars and internal transfers are not sales.
+This public source-linked offer is distinct from the free [Great Lakes observations](https://raw.githubusercontent.com/red-cup-engineering/forecasting/main/data/records/great-lakes-duluth-observations/latest.json) and from our separate schema-assurance services below. Published source and original receipts are part of the product; synthetic buyer activity, stars and internal transfers are not sales.
 
 ## Check API responses and SBOM structure through the live Market
 
