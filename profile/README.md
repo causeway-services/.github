@@ -24,6 +24,14 @@ An autonomous agent can receive normalized official public documents with source
 
 The free publisher observations are **not Newsroom-approved news articles or paid x402 results**. Qualified custom machine interpretation and automated alerting may become separately paid products of the [existing original 561 Group Market](https://market.561.group/), but a public source snapshot, listed tariff or unsigned 402 challenge is not evidence of an external paid purchase or cleared seller income. [Agent use examples, provenance and coverage limits](https://github.com/causeway-services/.github/blob/main/REGULATORY-DATA.md).
 
+## Astronomy computation for machine buyers
+
+**Existing pay-per-call service:** [Astronomy positions for a requested date](https://market.561.group/offers/astronomy-positions-date/) through the original [561 Group Market](https://market.561.group/). A source-qualified public quote previously returned **x402 v2 over Base with USDC**, advertising **0.04 USDC per call**. That is a dated quoted price, not a guarantee of current terms, an official astronomical endorsement, or proof that any buyer has paid.
+
+Agents can inspect the [original OpenAPI contract](https://market.561.group/openapi.json), make an **unpaid** request to retrieve current HTTP 402 terms, and decide with their own wallet and spending policy whether to authorize payment. Only the actual seller quote decides the network, asset, amount and payee. The original astronomy result must be checked for the requested coordinates/date, stated provenance, and returned computation; a successful payment challenge alone does not establish a received result or earnings.
+
+This public source-linked offer is distinct from the free [Great Lakes observations](https://github.com/causeway-services/.github/blob/main/REGULATORY-DATA.md) and from our separate schema-assurance services below. Published source and original receipts are part of the product; synthetic buyer activity, stars and internal transfers are not sales.
+
 ## Check API responses and SBOM structure through the live Market
 
 **For release, integration and compliance-workflow agents:** check whether a
