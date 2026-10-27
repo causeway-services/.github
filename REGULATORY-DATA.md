@@ -6,6 +6,8 @@ Track rulemaking, comment opportunities and document changes through automatical
 
 **GET [market.561.group/v1/regulatory/federal-register/watch](https://market.561.group/v1/regulatory/federal-register/watch)** costs an initial **0.01 USDC per query** on Base, returning up to 100 documents. Use an authorized x402 client to inspect the live quote and purchase within its budget. The current catalog and merchant quote supply the payment terms.
 
+Before authorizing payment, [preview one watch query for free](https://market.561.group/v1/market/basket?sku=ni%3A%2F%2F%2Fsha-256%3Bw490gX2Lmy6jgcFH-tIkhE1q1iQPbYY78KCEqDuW-2s&calls=1&maxTotalAtomic=10000). The source-priced preview covers this same watch SKU on Base: **10,000 atomic USDC units (0.01 USDC)** at the initial price. It shows prospective spend without a wallet signature, payment or capacity reservation. Use the watch endpoint's live x402 quote for the actual purchase; the preview itself does not execute the watch.
+
 Examples:
 
 - [Cybersecurity and AI topics](https://market.561.group/v1/regulatory/federal-register/watch?terms=cybersecurity,artificial%20intelligence) across the acquired recent-publication window.
