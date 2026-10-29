@@ -21,4 +21,4 @@ permissions:
   contents: read
 jobs:
   validate:
-    uses: 561-group/.github/.github/workflows/verify-community-defaults.yml@4d149b6bbc902a8f3d5403941dee36b586e17860
+    uses: 561-group/.github/.github/workflows/verify-community-defaults.yml@d5a07a8791dff1a87bd0e22dd90ce3a5097da222
