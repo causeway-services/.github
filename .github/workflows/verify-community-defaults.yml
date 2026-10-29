@@ -1,0 +1,24 @@
+name: Verify organization community defaults
+on:
+  pull_request:
+    paths:
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
+      - '.github/workflows/verify-community-defaults.yml'
+      - 'CONTRIBUTING.md'
+      - 'SECURITY.md'
+      - 'SUPPORT.md'
+  push:
+    branches: [main]
+    paths:
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
+      - '.github/workflows/verify-community-defaults.yml'
+      - 'CONTRIBUTING.md'
+      - 'SECURITY.md'
+      - 'SUPPORT.md'
+permissions:
+  contents: read
+jobs:
+  validate:
+    uses: 561-group/.github/.github/workflows/verify-community-defaults.yml@d5a07a8791dff1a87bd0e22dd90ce3a5097da222
