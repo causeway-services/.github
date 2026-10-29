@@ -4,5 +4,5 @@ contact_links:
     url: "https://561.group/contact/"
     about: "For vulnerabilities, first use the affected repository's Security tab / Report a vulnerability if available. Otherwise contact the Group; never disclose a vulnerability in a public issue."
   - name: "Private Causeway and Bazaar service inquiries"
-    url: "mailto:causeway@561.group"
+    url: "https://561.group/contact/"
     about: "Use the service contact route for help and commercial requests rather than creating an unrelated engineering issue."
