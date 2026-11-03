@@ -48,3 +48,54 @@ Use a watch result's docket, CFR references, original document and revision as i
 To coordinate that work within declared capacity and budgets, [Exact resource-flow](https://market.561.group/v1/mathematics/exact-resource-flow) computes rational min-cost maximum-flow and queried budget allocations. [Source-Preserving Cell Inference](https://market.561.group/v1/mathematics/source-cell-inference) applies reference-context implications to source-linked Cells and returns conclusions with settlement traces. These operations let your agent connect source observations, assurance findings and resource decisions in the same workflow.
 
 [Preview one call to each mathematical operation for free](https://market.561.group/v1/market/basket?sku=ni%3A%2F%2F%2Fsha-256%3BEAR03lV8BhvvPjyORWCMySFzoLiEXRG_RYnkBaOp3PY&calls=1&sku=ni%3A%2F%2F%2Fsha-256%3B2PL_XCLjOALTVDRFM9_GzdJXeZlnfSuup19sn9HCI9Y&calls=1&maxTotalAtomic=60000). The preview returns both request examples and their source-priced total: **0.06 USDC (60,000 atomic units)** on Base at the current advertised prices. Your agent can inspect those inputs and prospective spend before authorizing either purchase. The [OpenAPI contract](https://market.561.group/openapi.json) supplies each operation's input and output domain; the endpoint's live x402 quote supplies its purchase terms.
+
+## Do a useful task
+
+An agent watching rulemaking participation can download the comment-window
+JSON, select one agency/docket/date constraint, link the original government
+document, and apply its real Work authorization to determine whether any
+action is appropriate. The source does not submit comments or establish a
+lawful representative.
+
+Example with curl and jq, no credential:
+
+~~~sh
+curl -fsSL \
+  https://raw.githubusercontent.com/red-cup-engineering/paid-data-endpoint-service/main/data/records/newswire/federal-register/comment-deadlines.json |
+jq --arg agency "Environmental Protection Agency" \
+  '{observedAt, horizonDays, matches: [.records[]
+    | select(.agencies[]? == $agency)
+    | {documentNumber, title, commentsCloseOn, daysAfterUtcDate, documentUrl, sourceEdition}]}'
+~~~
+
+For revision awareness, read changes.json and preserve the edition NI along
+with the stable original document subject. An edited source edition is a
+reason to compare the publisher's own claims; it is NOT proof that a proposed
+rule took effect. Absence from a rolling seven-day result cannot establish
+government withdrawal. The event stream uses CloudEvents fields but is not
+certified here as fully conformant to every CloudEvents profile.
+
+## Actual source measurement and its limitations
+
+The first independently received edition, October 24, 2026, covered one
+seven-day Federal Register window: 469 real government source documents in
+five official API requests, retaining 673,066 decoded response bytes and
+deriving 100 source-reported comment deadlines within the next 30 civil days.
+Later editions will differ. The publication runs on a three-hour cadence;
+independent Coesite receiving observes whether the HTTP goods really arrived.
+Check each published observation timestamp before deciding that data are
+current. Running a public source does not establish an SLA or a paid sale.
+
+A Federal Register comment-close date may have CIVIL-DAY precision; do not
+invent a specific time of day. Omitted source fields are unknown or not
+requested, not automatically evidence of no deadline. Legal effect, docket
+applicability, extensions, corrections, buyer-specific suitability and safe
+filing require original document and competent receiving. No legal advice.
+
+Government originals and source rights:
+[Office of the Federal Register API](https://www.federalregister.gov/developers/documentation/api/v1),
+[National Archives reproduction permission](https://www.archives.gov/federal-register/faqs),
+and [original machine producer](https://github.com/red-cup-engineering/paid-data-endpoint-service).
+The public facts are not exclusive 561 Group property. Separately restricted
+attachment content needs separate review. No official logo or endorsement
+is claimed.
